@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação de Sangue: O Que os Jovens Pensam? | UFPA - Biotecnologia</title>
+    <meta name="description" content="Projeto acadêmico da Faculdade de Biotecnologia (ICB/UFPA) sobre conscientização juvenil para doação de sangue, hemoterapia, compatibilidade sanguínea e vacinação na UFPA.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        hemo: {
+                            50: '#FFF0F3',
+                            100: '#FFCCD5',
+                            500: '#EF233C',
+                            600: '#D90429',
+                            700: '#A4031F',
+                            900: '#590D22',
+                        },
+                        biotech: {
+                            50: '#F0FDFA',
+                            100: '#CCFBF1',
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                            700: '#0F766E',
+                        },
+                        science: {
+                            50: '#F0F9FF',
+                            500: '#0284C7',
+                            800: '#0F172A',
+                            900: '#090D16',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -10px rgba(15, 23, 42, 0.08)',
+                        'glow-red': '0 10px 25px -5px rgba(217, 4, 41, 0.35)',
+                        'glow-teal': '0 10px 25px -5px rgba(13, 148, 136, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados para Flip Cards 3D e Animações */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        .flipped .transform-style-3d {
+            transform: rotateY(180deg);
+        }
+
+        /* Animação de pulso suave para a gota de sangue */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        /* Destaque suave na tabela de compatibilidade */
+        .table-row-highlight {
+            background-color: rgba(239, 35, 60, 0.08) !important;
+            border-left: 4px solid #D90429;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] text-slate-800 font-sans antialiased selection:bg-hemo-600 selection:text-white">
+
+    <!-- BARRA INSTITUCIONAL TOPO -->
+    <div class="bg-science-900 text-slate-300 text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="inline-block w-2 h-2 rounded-full bg-biotech-500 animate-pulse"></span>
+                <span>Universidade Federal do Pará (UFPA)</span>
+                <span class="hidden sm:inline text-slate-600">•</span>
+                <span class="hidden sm:inline">Instituto de Ciências Biológicas (ICB)</span>
+                <span class="text-slate-600">•</span>
+                <span class="text-biotech-500 font-semibold">Faculdade de Biotecnologia</span>
+            </div>
+            <div class="text-xs text-slate-400 hidden md:block">
+                Projeto de Extensão & Divulgação Científica em Saúde
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGAÇÃO STICKY -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Identidade do Projeto -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-hemo-600 to-hemo-500 flex items-center justify-center text-white shadow-glow-red group-hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-slate-900 text-base tracking-tight block leading-none">HEMOBIO<span class="text-hemo-600">UFPA</span></span>
+                        <span class="text-[11px] font-medium text-slate-500 block mt-0.5">Faculdade de Biotecnologia</span>
+                    </div>
+                </a>
+
+                <!-- Links Desktop -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-600">
+                    <a href="#tema" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">O Que É</a>
+                    <a href="#mitos" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Mitos & Verdades</a>
+                    <a href="#criterios" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Quem Pode Doar</a>
+                    <a href="#etapas" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Passo a Passo</a>
+                    <a href="#compatibilidade" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Compatibilidade ABO/Rh</a>
+                    <a href="#vacinacao" class="px-3 py-2 rounded-lg text-biotech-700 bg-biotech-50 hover:bg-biotech-100 transition-colors flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-biotech-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                        Vacinação UFPA
+                    </a>
+                </nav>
+
+                <!-- Botão CTA Desktop -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="#simulador" class="bg-hemo-600 hover:bg-hemo-700 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-glow-red transition-all flex items-center gap-2">
+                        <span>Posso Doar Hoje?</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Botão Mobile Menu -->
+                <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1.5">
+            <a href="#tema" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">1. O Tema & Biotecnologia</a>
+            <a href="#mitos" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">2. Mitos e Verdades</a>
+            <a href="#criterios" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">3. Quem Pode Doar + Checklist</a>
+            <a href="#etapas" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">4. Passo a Passo da Doação</a>
+            <a href="#compatibilidade" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">5. Compatibilidade ABO e Rh</a>
+            <a href="#vacinacao" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-semibold text-biotech-700 bg-biotech-50">6. Vacinação na Própria UFPA</a>
+            <a href="#creditos" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">7. Conclusão & Autores</a>
+        </div>
+    </header>
+
+    <!-- 1. HERO / CABEÇALHO INSTITUCIONAL -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-science-800 via-science-900 to-slate-900 text-white pt-12 pb-20 lg:py-24">
+        <!-- Elementos Decorativos de Fundo (DNA / Células / Gradiente) -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-hemo-600 blur-3xl"></div>
+            <div class="absolute top-1/3 right-0 w-96 h-96 rounded-full bg-biotech-600 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Coluna Texto -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Selo Institucional -->
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-xs sm:text-sm font-medium text-slate-200">
+                        <span class="text-biotech-500 font-bold">UFPA</span>
+                        <span>•</span>
+                        <span>Instituto de Ciências Biológicas (ICB)</span>
+                        <span>•</span>
+                        <span class="text-hemo-500 font-semibold">Faculdade de Biotecnologia</span>
+                    </div>
+
+                    <!-- Título Principal -->
+                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.12]">
+                        DOAÇÃO DE SANGUE: <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-hemo-500 via-rose-400 to-amber-200">
+                            O QUE OS JOVENS PENSAM?
+                        </span>
+                    </h1>
+
+                    <!-- Slogan de Destaque -->
+                    <div class="inline-flex items-center gap-3 bg-gradient-to-r from-hemo-600/90 to-hemo-500/90 px-5 py-3 rounded-2xl shadow-glow-red border border-white/20">
+                        <span class="text-2xl" role="img" aria-label="Superpoder">🦸‍♂️🩸</span>
+                        <p class="font-display font-bold text-lg sm:text-xl text-white tracking-wide">
+                            "Salvar vidas é o seu superpoder!"
+                        </p>
+                    </div>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Uma jornada interativa e científica desenvolvida por discentes de Biotecnologia da UFPA para desmistificar medos, explicar como a ciência garante a segurança transfusional e incentivar a juventude a transformar solidariedade em vida.
+                    </p>
+
+                    <!-- Botões de Ação -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#mitos" class="px-6 py-3.5 rounded-xl bg-white text-science-900 font-display font-bold text-sm sm:text-base hover:bg-slate-100 transition-all shadow-lg flex items-center gap-2">
+                            <span>Desvendar Mitos e Medos</span>
+                            <svg class="w-5 h-5 text-hemo-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="#compatibilidade" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-display font-semibold text-sm sm:text-base transition-all">
+                            Ver Tabela ABO & Rh
+                        </a>
+                    </div>
+
+                    <!-- Mini Estatísticas Rápidas -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block font-display font-extrabold text-2xl sm:text-3xl text-hemo-500">Até 4</span>
+                            <span class="text-xs text-slate-400">Vidas salvas com 1 única doação</span>
+                        </div>
+                        <div>
+                            <span class="block font-display font-extrabold text-2xl sm:text-3xl text-biotech-500">8–10 min</span>
+                            <span class="text-xs text-slate-400">Tempo médio da coleta de sangue</span>
+                        </div>
+                        <div>
+                            <span class="block font-display font-extrabold text-2xl sm:text-3xl text-sky-400">100%</span>
+                            <span class="text-xs text-slate-400">Testado com Biotecnologia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Ilustração Científica & Interativa -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-slate-800/70 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-biotech-500 bg-biotech-500/10 px-3 py-1 rounded-full border border-biotech-500/20">
+                                Biotecnologia & Hemoterapia
+                            </span>
+                            <span class="text-xs text-slate-400">ICB • UFPA</span>
+                        </div>
+
+                        <!-- Ilustração SVG Centralizada -->
+                        <div class="relative flex flex-col items-center justify-center py-6">
+                            <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-hemo-600/30 to-biotech-500/30 flex items-center justify-center animate-float">
+                                <svg class="w-24 h-24 text-hemo-500 drop-shadow-[0_10px_15px_rgba(239,35,60,0.4)]" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                    <path d="M10 14h4M12 12v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h2 class="mt-4 font-display font-bold text-xl text-white text-center">
+                                Uma Bolsa = Múltiplos Componentes
+                            </h2>
+                            <p class="text-xs text-slate-300 text-center mt-1">
+                                A biotecnologia fraciona sua doação em:
+                            </p>
+                        </div>
+
+                        <!-- Cards dos 4 Hemocomponentes -->
+                        <div class="grid grid-cols-2 gap-3 text-left">
+                            <div class="bg-slate-900/80 border border-slate-700/70 p-3.5 rounded-2xl">
+                                <div class="text-hemo-500 font-bold text-xs uppercase">1. Concentrado de Hemácias</div>
+                                <p class="text-[11px] text-slate-300 mt-1">Trata anemias graves, acidentes e cirurgias.</p>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-700/70 p-3.5 rounded-2xl">
+                                <div class="text-amber-400 font-bold text-xs uppercase">2. Concentrado de Plaquetas</div>
+                                <p class="text-[11px] text-slate-300 mt-1">Vital para pacientes oncológicos e leucemias.</p>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-700/70 p-3.5 rounded-2xl">
+                                <div class="text-sky-400 font-bold text-xs uppercase">3. Plasma Fresco Congelado</div>
+                                <p class="text-[11px] text-slate-300 mt-1">Fundamental em grandes queimaduras e hemorragias.</p>
+                            </div>
+                            <div class="bg-slate-900/80 border border-slate-700/70 p-3.5 rounded-2xl">
+                                <div class="text-biotech-500 font-bold text-xs uppercase">4. Crioprecipitado</div>
+                                <p class="text-[11px] text-slate-300 mt-1">Rico em fatores de coagulação essenciais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. O TEMA: O QUE É HEMOTERAPIA E O PAPEL DA BIOTECNOLOGIA -->
+    <section id="tema" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-widest text-hemo-600 bg-hemo-50 px-3.5 py-1.5 rounded-full">
+                Fundamentação Científica
+            </span>
+            <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-slate-900">
+                O Que é a Hemoterapia e Qual o Papel da Biotecnologia?
+            </h2>
+            <p class="mt-4 text-slate-600 text-base sm:text-lg">
+                Entenda por que o sangue e seus derivados são insubstituíveis na medicina moderna e como a Biotecnologia garante transfusões cada vez mais seguras.
+            </p>
+        </div>
+
+        <!-- Alerta de Destaque Obrigatório -->
+        <div class="mb-12 rounded-3xl bg-gradient-to-r from-hemo-600 via-hemo-500 to-rose-600 p-6 sm:p-8 text-white shadow-glow-red relative overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                <div class="flex items-start sm:items-center gap-4">
+                    <div class="w-14 h-14 shrink-0 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-wider bg-black/20 px-2.5 py-1 rounded-md">Fato Científico Essencial</span>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl mt-2 leading-snug">
+                            "A solidariedade é a nossa única fonte. (Não existe sangue artificial seguro disponível no mercado)."
+                        </h3>
+                    </div>
+                </div>
+                <a href="#criterios" class="shrink-0 px-5 py-3 rounded-xl bg-white text-hemo-600 font-display font-bold text-sm hover:bg-slate-100 transition-colors shadow-md">
+                    Seja Essa Fonte de Vida
+                </a>
+            </div>
+        </div>
+
+        <!-- Grid: O que é Hemoterapia vs O Papel da Biotecnologia -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Card 1: O que é Hemoterapia -->
+            <div class="bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/80 shadow-soft flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-hemo-50 text-hemo-600 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-slate-900 mb-3">
+                        O Tratamento com Sangue e Derivados
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        A <strong>Hemoterapia</strong> é a área médica que emprega o sangue e seus hemocomponentes (hemácias, plaquetas, plasma e crioprecipitado) ou hemoderivados como suporte vital no dia a dia hospitalar. Sem estoques regulares, hospitais não conseguem realizar procedimentos de média e alta complexidade.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                            <span class="text-hemo-600 font-bold text-lg">01</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Urgências, Traumas e Cirurgias</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Reposição imediata de volume e oxigenação tecidual em vítimas de acidentes graves, partos complicados e cirurgias cardíacas ou ortopédicas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                            <span class="text-hemo-600 font-bold text-lg">02</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Doenças Crônicas e Hematológicas</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Suporte contínuo para pessoas com <strong>anemia falciforme</strong>, talassemias, hemofilias e distúrbios de coagulação.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                            <span class="text-hemo-600 font-bold text-lg">03</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Pacientes Oncológicos e Transplantes</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Quimioterapias frequentemente reduzem a produção medular, tornando transfusões de plaquetas e hemácias indispensáveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: O Papel da Biotecnologia -->
+            <div class="bg-white rounded-3xl p-7 sm:p-9 border border-slate-200/80 shadow-soft flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-biotech-50 text-biotech-600 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-slate-900 mb-3">
+                        Como a Biotecnologia Atua no Sangue Doado?
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Mesmo sem existir um substituto sintético comercial capaz de cumprir todas as funções biológicas do sangue humano, a <strong>Biotecnologia</strong> revolucionou a segurança, a triagem molecular e o aproveitamento de cada gota coletada:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-biotech-50/60 border border-biotech-100">
+                            <span class="text-biotech-600 font-bold text-lg">🧬</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Teste de Ácido Nucleico (Teste NAT)</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Biologia molecular de ponta (PCR em tempo real) que detecta material genético de vírus como HIV, Hepatite B, Hepatite C e Malária, reduzindo drasticamente a janela imunológica.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-biotech-50/60 border border-biotech-100">
+                            <span class="text-biotech-600 font-bold text-lg">🔬</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Imuno-hematologia & Sorologia de Alta Precisão</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Ensaios de quimioluminescência, ELISA e fenotipagem eritrocitária com anticorpos monoclonais produzidos por biotecnologia para evitar reações transfusionais.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-biotech-50/60 border border-biotech-100">
+                            <span class="text-biotech-600 font-bold text-lg">❄️</span>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 text-sm">Fracionamento e Soluções Conservadoras</h4>
+                                <p class="text-xs text-slate-600 mt-0.5">Soluções anticoagulantes e preservadoras (como CPDA-1 e SAG-Manitol) que mantêm a viabilidade metabólica das células por semanas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. POR QUE AS PESSOAS TÊM MEDO DE DOAR? (MITOS E VERDADES INTERATIVOS) -->
+    <section id="mitos" class="py-16 lg:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    Percepção Juvenil • Desmistificação
+                </span>
+                <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl">
+                    Por Que os Jovens Têm Medo de Doar?
+                </h2>
+                <p class="mt-4 text-slate-300 text-base sm:text-lg">
+                    A falta de informação e o receio do desconhecido ainda afastam muitos estudantes dos hemocentros. Veja os três receios mais comuns e clique nos cards abaixo para revelar a verdade científica!
+                </p>
+            </div>
+
+            <!-- Os 3 Principais Medos Juvenis -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-hemo-500/20 text-hemo-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                        💉
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-white">Medo de Agulha e da Dor</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            A famosa <em>tripanofobia</em> ou receio da picada inicial. Na prática, é apenas um leve beliscão que dura um segundo, seguido por coleta indolor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                        😵‍💫
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-white">Receio de Fraqueza ou Desmaio</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Medo de passar mal na faculdade ou no trabalho. Como o volume coletado (~450 mL) é menos de 10% do sangue total, o corpo compensa rapidamente com hidratação e lanche pós-doação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                        🛡️
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-white">Dúvidas sobre Saúde e Segurança</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Incerteza sobre ser apto, medo de contrair doenças ou achar que o sangue "vicia". Todos os insumos são estéreis, de uso único e descartáveis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instrução Interativa -->
+            <div class="flex items-center justify-center gap-2 mb-6 text-xs sm:text-sm text-biotech-400 font-medium">
+                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                </svg>
+                <span>Toque ou clique nos cards abaixo para virar e revelar <strong>MITO vs. VERDADE</strong></span>
+            </div>
+
+            <!-- Grid de 4 Flip Cards Interativos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 (Obrigatório) -->
+                <div class="flip-card perspective-1000 h-72 cursor-pointer group" onclick="this.classList.toggle('flipped')" tabindex="0" role="button" aria-label="Virar Card Mito 1">
+                    <div class="transform-style-3d relative w-full h-full">
+                        <!-- Frente: MITO -->
+                        <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-800/95 border-2 border-hemo-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-lg group-hover:border-hemo-500 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-hemo-500/20 text-hemo-400 border border-hemo-500/30">
+                                    ❌ MITO #1
+                                </span>
+                                <span class="text-xs text-slate-400">Clique para virar ↻</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-white leading-snug">
+                                    "Doar sangue enfraquece, vicia ou engrossa/afina o sangue."
+                                </h4>
+                            </div>
+                            <div class="text-xs text-hemo-400 font-semibold flex items-center gap-1">
+                                <span>Revelar a verdade científica</span>
+                                <span>➔</span>
+                            </div>
+                        </div>
+                        <!-- Verso: VERDADE -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-biotech-700 to-biotech-600 border-2 border-biotech-400 rounded-3xl p-6 flex flex-col justify-between shadow-glow-teal">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-white/20 text-white">
+                                    ✅ VERDADE
+                                </span>
+                                <span class="text-xs text-biotech-100">Voltar ↺</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white font-medium leading-relaxed">
+                                    <strong>Doar sangue é totalmente seguro!</strong> O organismo repõe o volume líquido (plasma) em até 24 horas e as células em poucas semanas, sem nenhum prejuízo à saúde nem alteração na viscosidade sanguínea.
+                                </p>
+                            </div>
+                            <div class="text-[11px] text-biotech-100 font-medium">
+                                Fonte: Ministério da Saúde / Hemopa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Obrigatório) -->
+                <div class="flip-card perspective-1000 h-72 cursor-pointer group" onclick="this.classList.toggle('flipped')" tabindex="0" role="button" aria-label="Virar Card Mito 2">
+                    <div class="transform-style-3d relative w-full h-full">
+                        <!-- Frente: MITO -->
+                        <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-800/95 border-2 border-hemo-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-lg group-hover:border-hemo-500 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-hemo-500/20 text-hemo-400 border border-hemo-500/30">
+                                    ❌ MITO #2
+                                </span>
+                                <span class="text-xs text-slate-400">Clique para virar ↻</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-white leading-snug">
+                                    "Só um tipo sanguíneo específico (como o O-) pode ou precisa doar."
+                                </h4>
+                            </div>
+                            <div class="text-xs text-hemo-400 font-semibold flex items-center gap-1">
+                                <span>Revelar a verdade científica</span>
+                                <span>➔</span>
+                            </div>
+                        </div>
+                        <!-- Verso: VERDADE -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-biotech-700 to-biotech-600 border-2 border-biotech-400 rounded-3xl p-6 flex flex-col justify-between shadow-glow-teal">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-white/20 text-white">
+                                    ✅ VERDADE
+                                </span>
+                                <span class="text-xs text-biotech-100">Voltar ↺</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white font-medium leading-relaxed">
+                                    <strong>Existem vários tipos compatíveis!</strong> Todos os tipos sanguíneos (A, B, AB e O, positivos e negativos) são indispensáveis diariamente para manter os estoques dos hospitais equilibrados.
+                                </p>
+                            </div>
+                            <div class="text-[11px] text-biotech-100 font-medium">
+                                Veja a tabela completa na Seção 6!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Complementar: Segurança e Descartáveis) -->
+                <div class="flip-card perspective-1000 h-72 cursor-pointer group" onclick="this.classList.toggle('flipped')" tabindex="0" role="button" aria-label="Virar Card Mito 3">
+                    <div class="transform-style-3d relative w-full h-full">
+                        <!-- Frente: MITO -->
+                        <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-800/95 border-2 border-hemo-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-lg group-hover:border-hemo-500 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-hemo-500/20 text-hemo-400 border border-hemo-500/30">
+                                    ❌ MITO #3
+                                </span>
+                                <span class="text-xs text-slate-400">Clique para virar ↻</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-white leading-snug">
+                                    "Quem tem tatuagem, piercing ou está menstruada nunca pode doar sangue."
+                                </h4>
+                            </div>
+                            <div class="text-xs text-hemo-400 font-semibold flex items-center gap-1">
+                                <span>Revelar a verdade científica</span>
+                                <span>➔</span>
+                            </div>
+                        </div>
+                        <!-- Verso: VERDADE -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-biotech-700 to-biotech-600 border-2 border-biotech-400 rounded-3xl p-6 flex flex-col justify-between shadow-glow-teal">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-white/20 text-white">
+                                    ✅ VERDADE
+                                </span>
+                                <span class="text-xs text-biotech-100">Voltar ↺</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white font-medium leading-relaxed">
+                                    <strong>Pode doar sim!</strong> A menstruação não impede a doação (desde que sem anemia). Já tatuagens ou maquiagem definitiva exigem apenas aguardar de <strong>6 a 12 meses</strong> após a aplicação segura.
+                                </p>
+                            </div>
+                            <div class="text-[11px] text-biotech-100 font-medium">
+                                Triagem avalia cada caso com segurança.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Complementar: Tempo e Jejum) -->
+                <div class="flip-card perspective-1000 h-72 cursor-pointer group" onclick="this.classList.toggle('flipped')" tabindex="0" role="button" aria-label="Virar Card Mito 4">
+                    <div class="transform-style-3d relative w-full h-full">
+                        <!-- Frente: MITO -->
+                        <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-800/95 border-2 border-hemo-500/50 rounded-3xl p-6 flex flex-col justify-between shadow-lg group-hover:border-hemo-500 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-hemo-500/20 text-hemo-400 border border-hemo-500/30">
+                                    ❌ MITO #4
+                                </span>
+                                <span class="text-xs text-slate-400">Clique para virar ↻</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-white leading-snug">
+                                    "É preciso estar em jejum absoluto e a coleta demora horas."
+                                </h4>
+                            </div>
+                            <div class="text-xs text-hemo-400 font-semibold flex items-center gap-1">
+                                <span>Revelar a verdade científica</span>
+                                <span>➔</span>
+                            </div>
+                        </div>
+                        <!-- Verso: VERDADE -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-biotech-700 to-biotech-600 border-2 border-biotech-400 rounded-3xl p-6 flex flex-col justify-between shadow-glow-teal">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-white/20 text-white">
+                                    ✅ VERDADE
+                                </span>
+                                <span class="text-xs text-biotech-100">Voltar ↺</span>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white font-medium leading-relaxed">
+                                    <strong>Nunca vá doar em jejum!</strong> Você deve se alimentar de forma leve e hidratar-se bem (apenas evitando comidas gordurosas nas 3h anteriores). A coleta dura só de <strong>8 a 10 minutos</strong>!
+                                </p>
+                            </div>
+                            <div class="text-[11px] text-biotech-100 font-medium">
+                                Rápido, seguro e 100% descartável.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. QUEM PODE DOAR E CRITÉRIOS BÁSICOS + SIMULADOR RÁPIDO -->
+    <section id="criterios" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-widest text-biotech-600 bg-biotech-50 px-3.5 py-1.5 rounded-full">
+                Requisitos Básicos de Elegibilidade
+            </span>
+            <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-slate-900">
+                Quem Pode Doar Sangue?
+            </h2>
+            <p class="mt-4 text-slate-600 text-base sm:text-lg">
+                Os critérios existem para proteger tanto quem doa quanto o paciente que receberá a transfusão. Confira os 5 pilares básicos e teste sua aptidão inicial ao lado.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <!-- Cards Visuais com Ícones SVG (Coluna 7) -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                
+                <!-- Requisito 1: Idade -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-soft hover:border-hemo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-hemo-50 text-hemo-600 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900">1. Idade Adequada</h3>
+                    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                        Ter entre <strong>16 e 69 anos</strong> (jovens de 16 e 17 anos podem doar mediante autorização formal dos pais ou responsáveis legais). A primeira doação deve ocorrer até os 60 anos.
+                    </p>
+                </div>
+
+                <!-- Requisito 2: Peso -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-soft hover:border-hemo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900">2. Peso Mínimo</h3>
+                    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                        Pesar no mínimo <strong>50 kg</strong>. Esse parâmetro garante que o volume coletado (cerca de 450 mL) seja totalmente seguro para a volemia do doador.
+                    </p>
+                </div>
+
+                <!-- Requisito 3: Boa Saúde -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-soft hover:border-hemo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-biotech-50 text-biotech-600 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900">3. Boa Saúde Geral</h3>
+                    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                        Estar sentindo-se bem no dia, sem sintomas de gripe, febre, infecções recentes ou feridas abertas.
+                    </p>
+                </div>
+
+                <!-- Requisito 4: Alimentação -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-soft hover:border-hemo-500/40 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900">4. Alimentação em Dia</h3>
+                    <p class="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                        <strong>Não estar em jejum!</strong> Faça uma refeição leve e beba água. Após o almoço ou refeições gordurosas, aguarde 3 horas antes de doar.
+                    </p>
+                </div>
+
+                <!-- Requisito 5: Sono e Descanso -->
+                <div class="sm:col-span-2 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-soft hover:border-hemo-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-lg text-slate-900">5. Sono em Dia e Documento Oficial</h3>
+                        <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                            Ter dormido pelo menos <strong>6 horas</strong> nas últimas 24 horas (fundamental para estudantes em época de provas!) e apresentar documento oficial com foto (RG, CNH, Carteira de Trabalho ou Passaporte).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulador Rápido Interativo: "Posso doar hoje?" (Coluna 5) -->
+            <div id="simulador" class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-soft">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-hemo-50 text-hemo-600">
+                        Simulador Interativo
+                    </span>
+                    <span id="checklist-counter" class="text-xs font-bold text-slate-500">0/5 marcados</span>
+                </div>
+                <h3 class="font-display font-extrabold text-2xl text-slate-900">
+                    Posso Doar Hoje? Checklist Rápido
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-6">
+                    Marque os itens abaixo que correspondem à sua condição hoje para verificar sua pré-aptidão:
+                </p>
+
+                <div class="space-y-3" id="donor-checklist">
+                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors select-none">
+                        <input type="checkbox" class="donor-check w-5 h-5 accent-hemo-600 rounded cursor-pointer">
+                        <span class="text-sm font-medium text-slate-700">Tenho entre 16 e 69 anos e documento com foto</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors select-none">
+                        <input type="checkbox" class="donor-check w-5 h-5 accent-hemo-600 rounded cursor-pointer">
+                        <span class="text-sm font-medium text-slate-700">Peso 50 kg ou mais</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors select-none">
+                        <input type="checkbox" class="donor-check w-5 h-5 accent-hemo-600 rounded cursor-pointer">
+                        <span class="text-sm font-medium text-slate-700">Dormi pelo menos 6 horas na última noite</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors select-none">
+                        <input type="checkbox" class="donor-check w-5 h-5 accent-hemo-600 rounded cursor-pointer">
+                        <span class="text-sm font-medium text-slate-700">Estou bem alimentado(a) e hidratado(a) (sem jejum)</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors select-none">
+                        <input type="checkbox" class="donor-check w-5 h-5 accent-hemo-600 rounded cursor-pointer">
+                        <span class="text-sm font-medium text-slate-700">Estou sem febre, gripe ou infecção ativa hoje</span>
+                    </label>
+                </div>
+
+                <!-- Barra de Progresso -->
+                <div class="mt-6">
+                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div id="checklist-progress" class="h-full bg-hemo-600 transition-all duration-300 w-0"></div>
+                    </div>
+                </div>
+
+                <!-- Resultado Dinâmico -->
+                <div id="checklist-result" class="mt-5 p-4 rounded-2xl bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium transition-all">
+                    👆 Selecione os critérios acima para ver o resultado da sua pré-avaliação.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PASSO A PASSO DA DOAÇÃO (LINHA DO TEMPO / STEPPER MODERNO) -->
+    <section id="etapas" class="py-16 lg:py-24 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-science-500 bg-science-50 px-3.5 py-1.5 rounded-full">
+                    Do Cadastro ao Hospital
+                </span>
+                <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-slate-900">
+                    Passo a Passo da Doação de Sangue
+                </h2>
+                <p class="mt-4 text-slate-600 text-base sm:text-lg">
+                    Conhecer cada etapa elimina a ansiedade! Veja o caminho completo da sua doação, desde a chegada ao hemocentro até o processamento biotecnológico e envio aos hospitais.
+                </p>
+            </div>
+
+            <!-- Grid Stepper de 6 Etapas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+                
+                <!-- Etapa 1: Cadastro -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-hemo-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-hemo-600 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-glow-red">
+                            01
+                        </span>
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Recepção</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Cadastro</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Apresentação de <strong>documento oficial com foto</strong> (RG, CNH, Passaporte ou Carteira Profissional) e atualização dos seus dados básicos no sistema do hemocentro.
+                    </p>
+                </div>
+
+                <!-- Etapa 2: Triagem -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-hemo-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-hemo-600 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-glow-red">
+                            02
+                        </span>
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pré-Coleta</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Triagem Clínica e Hematológica</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong>Entrevista individual e sigilosa</strong> sobre hábitos e saúde + <strong>Exame rápido</strong> (uma gotinha de sangue para checar se não há anemia), aferição de pressão arterial, pulso, peso e temperatura.
+                    </p>
+                </div>
+
+                <!-- Etapa 3: Coleta -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-hemo-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-hemo-600 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-glow-red">
+                            03
+                        </span>
+                        <span class="text-xs font-bold text-hemo-600 bg-hemo-50 px-2.5 py-1 rounded-full">⚡ 8 a 10 min</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Coleta</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        A doação em si! Realizada em poltrona confortável por profissionais capacitados com material 100% estéril e descartável. Leva apenas de <strong>8 a 10 minutos</strong>, seguida de um lanche revigorante.
+                    </p>
+                </div>
+
+                <!-- Etapa 4: Processamento -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-biotech-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-biotech-600 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-glow-teal">
+                            04
+                        </span>
+                        <span class="text-xs font-semibold text-biotech-600 uppercase tracking-wider">Laboratório</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Processamento (Centrifugação)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        A bolsa coletada é <strong>centrifugada</strong> em equipamentos refrigerados de alta precisão para separar os hemocomponentes (concentrado de hemácias, plaquetas, plasma e crioprecipitado).
+                    </p>
+                </div>
+
+                <!-- Etapa 5: Testes -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-biotech-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-biotech-600 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-glow-teal">
+                            05
+                        </span>
+                        <span class="text-xs font-semibold text-biotech-600 uppercase tracking-wider">Biotecnologia</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Testes Laboratoriais Rigorosos</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong>Segurança rigorosa:</strong> tipagem ABO/Rh, pesquisa de anticorpos irregulares e testes sorológicos e moleculares (NAT) para HIV, Hepatites B e C, Sífilis, Doença de Chagas, HTLV I/II e Malária.
+                    </p>
+                </div>
+
+                <!-- Etapa 6: Distribuição -->
+                <div class="group bg-[#F8F9FA] hover:bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-biotech-500 transition-all shadow-sm hover:shadow-soft relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="w-11 h-11 rounded-2xl bg-science-500 text-white font-display font-extrabold text-lg flex items-center justify-center">
+                            06
+                        </span>
+                        <span class="text-xs font-semibold text-science-500 uppercase tracking-wider">Vidas Salvas</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Distribuição Hospitalar</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Após aprovação em todos os testes de controle de qualidade, as bolsas liberadas são enviadas sob cadeia de frio controlada para os <strong>hospitais e prontos-socorros</strong>.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. COMPATIBILIDADE ABO E FATOR RH (SIMULADOR + TABELA COMPLETA) -->
+    <section id="compatibilidade" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-hemo-600 bg-hemo-50 px-3.5 py-1.5 rounded-full">
+                Imuno-hematologia • Sistema ABO e Fator Rh
+            </span>
+            <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-slate-900">
+                Compatibilidade Sanguínea: Quem Doa Para Quem?
+            </h2>
+            <p class="mt-4 text-slate-600 text-base sm:text-lg">
+                Os antígenos presentes na superfície das hemácias determinam a compatibilidade transfusional. Clique no seu tipo sanguíneo abaixo ou consulte a tabela completa!
+            </p>
+        </div>
+
+        <!-- Badges de Destaque Obrigatórios: O- Doador Universal & AB+ Receptor Universal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-gradient-to-r from-hemo-600 to-hemo-500 text-white p-6 rounded-3xl shadow-glow-red flex items-center gap-5">
+                <div class="w-16 h-16 rounded-2xl bg-white text-hemo-600 font-display font-extrabold text-2xl flex items-center justify-center shrink-0 shadow-md">
+                    O-
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-black/20 px-2.5 py-0.5 rounded-full">Destaque Imuno-hematológico</span>
+                    <h3 class="font-display font-extrabold text-xl mt-1">
+                        O tipo O- é o Doador Universal (de hemácias)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-rose-100 mt-1">
+                        Por não possuir antígenos A, B nem fator Rh (D) nas hemácias, pode doar concentrado de hemácias para todos os tipos sanguíneos em emergências!
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-science-800 to-slate-800 text-white p-6 rounded-3xl shadow-soft flex items-center gap-5 border border-slate-700">
+                <div class="w-16 h-16 rounded-2xl bg-biotech-500 text-white font-display font-extrabold text-2xl flex items-center justify-center shrink-0 shadow-md">
+                    AB+
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-biotech-500/20 text-biotech-300 px-2.5 py-0.5 rounded-full">Destaque Imuno-hematológico</span>
+                    <h3 class="font-display font-extrabold text-xl mt-1">
+                        O tipo AB+ é o Receptor Universal
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                        Por expressar os antígenos A, B e Rh, não produz anticorpos contra nenhum deles, podendo receber hemácias de todos os 8 tipos sanguíneos!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seletor Interativo de Tipo Sanguíneo -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-soft mb-12">
+            <div class="text-center mb-6">
+                <h3 class="font-display font-bold text-xl text-slate-900">
+                    🔍 Simulador Interativo: Selecione um Tipo Sanguíneo
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                    Clique em qualquer tipo abaixo para destacar instantaneamente para quem ele doa e de quem ele recebe:
+                </p>
+            </div>
+
+            <!-- Botões dos 8 Tipos Sanguíneos -->
+            <div class="grid grid-cols-4 sm:grid-cols-8 gap-3 max-w-3xl mx-auto mb-8" id="blood-selector">
+                <button type="button" data-blood="O-" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-hemo-600 bg-hemo-600 text-white shadow-glow-red transition-all">O-</button>
+                <button type="button" data-blood="O+" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">O+</button>
+                <button type="button" data-blood="A-" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">A-</button>
+                <button type="button" data-blood="A+" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">A+</button>
+                <button type="button" data-blood="B-" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">B-</button>
+                <button type="button" data-blood="B+" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">B+</button>
+                <button type="button" data-blood="AB-" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">AB-</button>
+                <button type="button" data-blood="AB+" class="blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all">AB+</button>
+            </div>
+
+            <!-- Painel Dinâmico de Resultado -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-hemo-600 mb-3">
+                        <span>🩸 Tipo <span id="selected-blood-donate" class="underline">O-</span> PODE DOAR PARA:</span>
+                    </div>
+                    <div id="donate-to-badges" class="flex flex-wrap gap-2">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-biotech-600 mb-3">
+                        <span>🏥 Tipo <span id="selected-blood-receive" class="underline">O-</span> PODE RECEBER DE:</span>
+                    </div>
+                    <div id="receive-from-badges" class="flex flex-wrap gap-2">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela Completa Estilizada de Compatibilidade Sanguínea -->
+        <div class="bg-white rounded-3xl border border-slate-200/90 shadow-soft overflow-hidden">
+            <div class="px-6 py-5 bg-slate-900 text-white flex flex-wrap items-center justify-between gap-2">
+                <h3 class="font-display font-bold text-lg">
+                    Tabela Completa de Compatibilidade Eritrocitária (ABO / Fator Rh)
+                </h3>
+                <span class="text-xs text-slate-400">Clique em um tipo acima para destacar na tabela</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 text-xs uppercase font-bold border-b border-slate-200">
+                            <th class="py-4 px-6">Tipo Sanguíneo</th>
+                            <th class="py-4 px-6">Classificação Especial</th>
+                            <th class="py-4 px-6 text-hemo-700">Pode Doar Para</th>
+                            <th class="py-4 px-6 text-biotech-700">Pode Receber De</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm" id="compatibility-table-body">
+                        <tr data-row="A+" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">A+</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Muito frequente na população</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A+ e AB+</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A+, A-, O+ e O-</td>
+                        </tr>
+                        <tr data-row="A-" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">A-</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Fator Rh Negativo</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A+, A-, AB+ e AB-</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A- e O-</td>
+                        </tr>
+                        <tr data-row="B+" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">B+</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Fator Rh Positivo</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">B+ e AB+</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">B+, B-, O+ e O-</td>
+                        </tr>
+                        <tr data-row="B-" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">B-</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Baixa frequência populacional</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">B+, B-, AB+ e AB-</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">B- e O-</td>
+                        </tr>
+                        <tr data-row="AB+" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-biotech-600">AB+</td>
+                            <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-biotech-100 text-biotech-700">Receptor Universal</span></td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">AB+ (apenas)</td>
+                            <td class="py-4 px-6 font-bold text-biotech-700">Todos (A+, A-, B+, B-, AB+, AB-, O+, O-)</td>
+                        </tr>
+                        <tr data-row="AB-" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">AB-</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Mais raro na população</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">AB+ e AB-</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A-, B-, AB- e O-</td>
+                        </tr>
+                        <tr data-row="O+" class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-slate-900">O+</td>
+                            <td class="py-4 px-6 text-xs text-slate-500">Mais comum no Brasil (alta demanda)</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">A+, B+, AB+ e O+</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">O+ e O-</td>
+                        </tr>
+                        <tr data-row="O-" class="hover:bg-slate-50 transition-colors table-row-highlight">
+                            <td class="py-4 px-6 font-display font-extrabold text-lg text-hemo-600">O-</td>
+                            <td class="py-4 px-6"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-hemo-100 text-hemo-700">Doador Universal</span></td>
+                            <td class="py-4 px-6 font-bold text-hemo-600">Todos (A+, A-, B+, B-, AB+, AB-, O+, O-)</td>
+                            <td class="py-4 px-6 font-semibold text-slate-800">O- (apenas)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SEÇÃO ADICIONAL — VACINAÇÃO NA PRÓPRIA UFPA -->
+    <section id="vacinacao" class="py-16 lg:py-24 bg-gradient-to-br from-biotech-700 via-teal-800 to-science-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Coluna Conteúdo Sobre Vacinação na UFPA (Coluna 7) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-bold text-biotech-100">
+                        <span>💉 Saúde Coletiva & Comunidade Acadêmica</span>
+                    </div>
+
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl leading-tight">
+                        Vacinação na Própria UFPA: Biotecnologia e Prevenção no Campus
+                    </h2>
+
+                    <p class="text-teal-50 text-base sm:text-lg leading-relaxed">
+                        Assim como a doação de sangue, a <strong>imunização</strong> é um ato de responsabilidade coletiva e uma das maiores conquistas da Biotecnologia moderna. A <strong>Universidade Federal do Pará (UFPA)</strong> promove regularmente campanhas e ações de vacinação dentro do próprio campus, facilitando o acesso de estudantes, servidores e comunidade externa à atualização da caderneta vacinal.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+                            <h3 class="font-display font-bold text-lg text-white flex items-center gap-2">
+                                <span>🧬</span> Biotecnologia das Vacinas
+                            </h3>
+                            <p class="text-xs sm:text-sm text-teal-100 mt-1.5 leading-relaxed">
+                                De vacinas recombinantes (como a da Hepatite B, que também protege futuros receptores e profissionais de saúde) às plataformas de mRNA e vetores virais, a biotecnologia salva milhões de vidas.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+                            <h3 class="font-display font-bold text-lg text-white flex items-center gap-2">
+                                <span>🏛️</span> Cuidado no Campus UFPA
+                            </h3>
+                            <p class="text-xs sm:text-sm text-teal-100 mt-1.5 leading-relaxed">
+                                As ações de multivacinação na UFPA oferecem imunizantes contra Influenza, COVID-19, Hepatite B, Febre Amarela, Tríplice Viral e Antitetânica, fortalecendo a biossegurança universitária.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Guia Prático: Vacinou na UFPA? Quando posso doar sangue? (Coluna 5) -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl border border-teal-100">
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-biotech-100 text-biotech-700">
+                            Planejamento do Estudante Doador
+                        </span>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-slate-900 mt-3">
+                            Dica de Ouro: Doar Antes de Vacinar ou Respeitar o Intervalo!
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-2 mb-5 leading-relaxed">
+                            Vai participar de uma campanha de vacinação na UFPA e também quer doar sangue? Se puder, <strong>doe sangue primeiro e vacine-se depois</strong>! Caso já tenha tomado a vacina, basta aguardar o prazo regulamentar:
+                        </p>
+
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Hepatite B Recombinante / Influenza (Gripe)</span>
+                                    <span class="text-xs text-slate-500">Vírus inativado / antígeno recombinante</span>
+                                </div>
+                                <span class="px-3 py-1 rounded-lg bg-biotech-50 text-biotech-700 font-bold shrink-0">48 horas</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">COVID-19 (mRNA / Vetor Viral)</span>
+                                    <span class="text-xs text-slate-500">Pfizer, AstraZeneca, Janssen (ou 48h CoronaVac)</span>
+                                </div>
+                                <span class="px-3 py-1 rounded-lg bg-sky-50 text-sky-700 font-bold shrink-0">7 dias</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">Febre Amarela / Tríplice Viral (Sarampo)</span>
+                                    <span class="text-xs text-slate-500">Vacinas de microrganismos vivos atenuados</span>
+                                </div>
+                                <span class="px-3 py-1 rounded-lg bg-amber-50 text-amber-700 font-bold shrink-0">4 semanas</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 mt-4 text-center">
+                            *Prazos de inaptidão temporária segundo normas técnicas do Ministério da Saúde e ANVISA.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONCLUSÃO E RODAPÉ ACADÊMICO -->
+    <section id="creditos" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Card de Conclusão Inspiradora -->
+        <div class="bg-gradient-to-br from-slate-900 via-science-800 to-hemo-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl mb-16 relative overflow-hidden">
+            <div class="max-w-3xl mx-auto relative z-10 space-y-6">
+                <div class="w-16 h-16 rounded-2xl bg-hemo-600 text-white flex items-center justify-center mx-auto shadow-glow-red text-3xl">
+                    🩸
+                </div>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl leading-tight">
+                    Vencer o medo da agulha é o que libera o seu poder de salvar vidas!
+                </h2>
+                <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+                    Uma picada dura apenas um segundo, a coleta leva menos de 10 minutos, mas o impacto do seu gesto dura a vida inteira para até <strong>4 famílias</strong>. A ciência e a biotecnologia cuidam de toda a segurança — mas a matéria-prima da vida depende exclusivamente da sua solidariedade.
+                </p>
+                <div class="pt-2">
+                    <span class="inline-block px-6 py-3 rounded-2xl bg-white text-hemo-600 font-display font-extrabold text-base sm:text-lg shadow-lg">
+                        "Salvar vidas é o seu superpoder!"
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Créditos Acadêmicos (Discentes Autores) -->
+        <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-soft">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-slate-200">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-biotech-600">Créditos Acadêmicos</span>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 mt-1">
+                        Equipe Discente Autora do Projeto
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-1">
+                        Universidade Federal do Pará (UFPA) • Instituto de Ciências Biológicas (ICB) • Faculdade de Biotecnologia
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-100 px-4 py-2.5 rounded-2xl shrink-0">
+                    <span class="w-3 h-3 rounded-full bg-biotech-500"></span>
+                    <span class="text-xs font-bold text-slate-700">6 Discentes de Biotecnologia</span>
+                </div>
+            </div>
+
+            <!-- Grid com os 6 Discentes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+                
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-hemo-600 to-hemo-500 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        AL
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Adrianny da Silva Lima</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-biotech-600 to-biotech-500 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        CF
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Camilli Gabrielli Melo de Freitas</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-science-500 to-sky-600 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        CC
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Chrystian David Cruz Cruz</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-hemo-600 to-hemo-500 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        JS
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Jamyly da Silva dos Santos</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-biotech-600 to-biotech-500 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        MM
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Maria Luiza Pereira de Morais</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-biotech-500 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-science-500 to-sky-600 text-white font-display font-bold text-sm flex items-center justify-center shrink-0">
+                        RA
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-slate-900 text-sm sm:text-base">Renan Alexandre Melo de Almeida</h4>
+                        <span class="text-xs text-slate-500">Discente • Faculdade de Biotecnologia (UFPA)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-science-900 text-slate-400 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-hemo-600 text-white flex items-center justify-center font-bold">🩸</span>
+                <div>
+                    <p class="text-white font-semibold">Universidade Federal do Pará (UFPA)</p>
+                    <p class="text-xs text-slate-400">Instituto de Ciências Biológicas (ICB) • Faculdade de Biotecnologia</p>
+                </div>
+            </div>
+            <div class="text-center sm:text-right">
+                <p>Projeto Acadêmico: <strong class="text-slate-200">"Doação de Sangue: O Que os Jovens Pensam?"</strong></p>
+                <p class="text-xs text-slate-500 mt-0.5">Desenvolvido para conscientização em saúde e divulgação científica • Belém - PA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS INTERATIVOS -->
+    <script>
+        // 1. Controle do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIconOpen.classList.add('hidden');
+                menuIconClose.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // 2. Simulador Rápido "Posso Doar Hoje?" (Checklist)
+        const checkboxes = document.querySelectorAll('.donor-check');
+        const counterEl = document.getElementById('checklist-counter');
+        const progressEl = document.getElementById('checklist-progress');
+        const resultEl = document.getElementById('checklist-result');
+
+        function updateChecklist() {
+            const total = checkboxes.length;
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+            });
+
+            counterEl.textContent = `${checked}/${total} marcados`;
+            const percentage = (checked / total) * 100;
+            progressEl.style.width = `${percentage}%`;
+
+            if (checked === 0) {
+                resultEl.className = 'mt-5 p-4 rounded-2xl bg-slate-100 text-slate-700 text-xs sm:text-sm font-medium transition-all';
+                resultEl.innerHTML = '👆 Selecione os critérios acima para ver o resultado da sua pré-avaliação.';
+            } else if (checked < total) {
+                resultEl.className = 'mt-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs sm:text-sm font-medium transition-all';
+                resultEl.innerHTML = `⏳ <strong>Quase lá (${checked} de ${total}):</strong> Você precisa preencher todos os 5 requisitos básicos no dia da doação. Se hoje você dormiu pouco ou está em jejum, descanse, alimente-se bem e doe amanhã!`;
+            } else {
+                resultEl.className = 'mt-5 p-4 rounded-2xl bg-biotech-50 border border-biotech-200 text-biotech-800 text-xs sm:text-sm font-medium transition-all';
+                resultEl.innerHTML = '🎉 <strong>Parabéns! Você cumpre os critérios básicos iniciais!</strong> Procure o hemocentro mais próximo (como a Fundação HEMOPA) com seu documento oficial com foto e exerça o seu superpoder de salvar vidas!';
+            }
+        }
+
+        checkboxes.forEach(cb => cb.addEventListener('change', updateChecklist));
+
+        // 3. Simulador Interativo de Compatibilidade Sanguínea ABO/Rh
+        const compatibilityData = {
+            'O-': {
+                donatesTo: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'],
+                receivesFrom: ['O-']
+            },
+            'O+': {
+                donatesTo: ['O+', 'A+', 'B+', 'AB+'],
+                receivesFrom: ['O-', 'O+']
+            },
+            'A-': {
+                donatesTo: ['A-', 'A+', 'AB-', 'AB+'],
+                receivesFrom: ['O-', 'A-']
+            },
+            'A+': {
+                donatesTo: ['A+', 'AB+'],
+                receivesFrom: ['O-', 'O+', 'A-', 'A+']
+            },
+            'B-': {
+                donatesTo: ['B-', 'B+', 'AB-', 'AB+'],
+                receivesFrom: ['O-', 'B-']
+            },
+            'B+': {
+                donatesTo: ['B+', 'AB+'],
+                receivesFrom: ['O-', 'O+', 'B-', 'B+']
+            },
+            'AB-': {
+                donatesTo: ['AB-', 'AB+'],
+                receivesFrom: ['O-', 'A-', 'B-', 'AB-']
+            },
+            'AB+': {
+                donatesTo: ['AB+'],
+                receivesFrom: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+']
+            }
+        };
+
+        const bloodButtons = document.querySelectorAll('.blood-btn');
+        const selectedDonateSpan = document.getElementById('selected-blood-donate');
+        const selectedReceiveSpan = document.getElementById('selected-blood-receive');
+        const donateBadgesContainer = document.getElementById('donate-to-badges');
+        const receiveBadgesContainer = document.getElementById('receive-from-badges');
+        const tableRows = document.querySelectorAll('#compatibility-table-body tr');
+
+        function selectBloodType(type) {
+            // Atualizar estilo dos botões
+            bloodButtons.forEach(btn => {
+                if (btn.dataset.blood === type) {
+                    btn.className = 'blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-hemo-600 bg-hemo-600 text-white shadow-glow-red transition-all scale-105';
+                } else {
+                    btn.className = 'blood-btn py-3.5 rounded-2xl font-display font-extrabold text-lg border-2 border-slate-200 bg-slate-50 text-slate-800 hover:border-hemo-500 transition-all';
+                }
+            });
+
+            // Atualizar textos
+            selectedDonateSpan.textContent = type;
+            selectedReceiveSpan.textContent = type;
+
+            // Renderizar badges de doação
+            const info = compatibilityData[type];
+            donateBadgesContainer.innerHTML = info.donatesTo.map(target => 
+                `<span class="px-3.5 py-1.5 rounded-xl font-display font-bold text-sm bg-hemo-600 text-white shadow-sm">${target}</span>`
+            ).join('');
+
+            // Renderizar badges de recepção
+            receiveBadgesContainer.innerHTML = info.receivesFrom.map(source => 
+                `<span class="px-3.5 py-1.5 rounded-xl font-display font-bold text-sm bg-biotech-600 text-white shadow-sm">${source}</span>`
+            ).join('');
+
+            // Destacar linha correspondente na tabela
+            tableRows.forEach(row => {
+                if (row.dataset.row === type) {
+                    row.classList.add('table-row-highlight');
+                } else {
+                    row.classList.remove('table-row-highlight');
+                }
+            });
+        }
+
+        bloodButtons.forEach(btn => {
+            btn.addEventListener('click', () => selectBloodType(btn.dataset.blood));
+        });
+
+        // Inicializar com O- selecionado
+        selectBloodType('O-');
+    </script>
+</body>
+</html>
