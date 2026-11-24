@@ -27,6 +27,7 @@
                         hemo: {
                             50: '#FFF0F3',
                             100: '#FFCCD5',
+                            400: '#FB7185',
                             500: '#EF233C',
                             600: '#D90429',
                             700: '#A4031F',
@@ -35,6 +36,9 @@
                         biotech: {
                             50: '#F0FDFA',
                             100: '#CCFBF1',
+                            200: '#99F6E4',
+                            300: '#5EEAD4',
+                            400: '#2DD4BF',
                             500: '#14B8A6',
                             600: '#0D9488',
                             700: '#0F766E',
@@ -144,25 +148,29 @@
                 </a>
 
                 <!-- Links Desktop -->
-                <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-600">
-                    <a href="#tema" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">O Que É</a>
-                    <a href="#mitos" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Mitos & Verdades</a>
-                    <a href="#criterios" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Quem Pode Doar</a>
-                    <a href="#etapas" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Passo a Passo</a>
-                    <a href="#compatibilidade" class="px-3 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors">Compatibilidade ABO/Rh</a>
-                    <a href="#vacinacao" class="px-3 py-2 rounded-lg text-biotech-700 bg-biotech-50 hover:bg-biotech-100 transition-colors flex items-center gap-1.5">
-                        <svg class="w-4 h-4 text-biotech-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 text-xs xl:text-sm font-medium text-slate-600">
+                    <a href="#tema" class="px-2.5 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors whitespace-nowrap">O Que É</a>
+                    <a href="#mitos" class="px-2.5 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors whitespace-nowrap">Mitos</a>
+                    <a href="#criterios" class="px-2.5 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors whitespace-nowrap">Quem Pode Doar</a>
+                    <a href="#etapas" class="px-2.5 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors whitespace-nowrap">Etapas</a>
+                    <a href="#simulacoes-3d" class="px-2.5 py-2 rounded-lg text-science-900 bg-gradient-to-r from-biotech-100 to-sky-100 hover:from-biotech-500 hover:to-sky-500 hover:text-white font-semibold transition-all flex items-center gap-1.5 whitespace-nowrap">
+                        <span class="inline-block w-2 h-2 rounded-full bg-biotech-600 animate-pulse shrink-0"></span>
+                        <span>Simulações 3D</span>
+                    </a>
+                    <a href="#compatibilidade" class="px-2.5 py-2 rounded-lg hover:text-hemo-600 hover:bg-hemo-50 transition-colors whitespace-nowrap">Tabela ABO/Rh</a>
+                    <a href="#vacinacao" class="px-2.5 py-2 rounded-lg text-biotech-700 bg-biotech-50 hover:bg-biotech-100 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-4 h-4 text-biotech-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
-                        Vacinação UFPA
+                        <span>Vacinação UFPA</span>
                     </a>
                 </nav>
 
                 <!-- Botão CTA Desktop -->
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="#simulador" class="bg-hemo-600 hover:bg-hemo-700 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-glow-red transition-all flex items-center gap-2">
+                <div class="hidden sm:flex items-center gap-3 shrink-0">
+                    <a href="#simulador" class="bg-hemo-600 hover:bg-hemo-700 text-white text-xs xl:text-sm font-semibold px-3.5 xl:px-4 py-2.5 rounded-xl shadow-glow-red transition-all flex items-center gap-1.5 whitespace-nowrap">
                         <span>Posso Doar Hoje?</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </a>
@@ -186,9 +194,10 @@
             <a href="#mitos" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">2. Mitos e Verdades</a>
             <a href="#criterios" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">3. Quem Pode Doar + Checklist</a>
             <a href="#etapas" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">4. Passo a Passo da Doação</a>
-            <a href="#compatibilidade" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">5. Compatibilidade ABO e Rh</a>
-            <a href="#vacinacao" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-semibold text-biotech-700 bg-biotech-50">6. Vacinação na Própria UFPA</a>
-            <a href="#creditos" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">7. Conclusão & Autores</a>
+            <a href="#simulacoes-3d" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-bold text-science-900 bg-gradient-to-r from-biotech-100 to-sky-100">5. Laboratório 3D Interativo (Novo)</a>
+            <a href="#compatibilidade" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-hemo-50 hover:text-hemo-600">6. Compatibilidade ABO e Rh</a>
+            <a href="#vacinacao" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-semibold text-biotech-700 bg-biotech-50">7. Vacinação na Própria UFPA</a>
+            <a href="#creditos" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">8. Conclusão & Autores</a>
         </div>
     </header>
 
@@ -234,15 +243,21 @@
                     </p>
 
                     <!-- Botões de Ação -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+                        <a href="#simulacoes-3d" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-biotech-500 to-sky-500 hover:from-biotech-600 hover:to-sky-600 text-white font-display font-bold text-sm sm:text-base transition-all shadow-glow-teal flex items-center gap-2">
+                            <span>Explorar Simulações 3D</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+                            </svg>
+                        </a>
                         <a href="#mitos" class="px-6 py-3.5 rounded-xl bg-white text-science-900 font-display font-bold text-sm sm:text-base hover:bg-slate-100 transition-all shadow-lg flex items-center gap-2">
-                            <span>Desvendar Mitos e Medos</span>
+                            <span>Desvendar Mitos</span>
                             <svg class="w-5 h-5 text-hemo-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
-                        <a href="#compatibilidade" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-display font-semibold text-sm sm:text-base transition-all">
-                            Ver Tabela ABO & Rh
+                        <a href="#compatibilidade" class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-display font-semibold text-sm sm:text-base transition-all">
+                            Tabela ABO & Rh
                         </a>
                     </div>
 
@@ -878,6 +893,10 @@
                     <p class="text-sm text-slate-600 leading-relaxed">
                         A bolsa coletada é <strong>centrifugada</strong> em equipamentos refrigerados de alta precisão para separar os hemocomponentes (concentrado de hemácias, plaquetas, plasma e crioprecipitado).
                     </p>
+                    <button type="button" onclick="window.openLab3D && window.openLab3D('centrifuga')" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-biotech-700 bg-biotech-50 hover:bg-biotech-100 border border-biotech-200 px-3 py-1.5 rounded-xl transition-colors cursor-pointer">
+                        <span>Ver centrifugação em 3D</span>
+                        <span>➔</span>
+                    </button>
                 </div>
 
                 <!-- Etapa 5: Testes -->
@@ -908,6 +927,355 @@
                     </p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- 5B. LABORATÓRIO 3D INTERATIVO (SIMULAÇÕES WEBGL) -->
+    <section id="simulacoes-3d" class="py-16 lg:py-24 bg-gradient-to-b from-science-900 via-[#0B1222] to-slate-950 text-white relative overflow-hidden">
+        <!-- Efeitos de luz ambiente do laboratório -->
+        <div class="absolute inset-0 pointer-events-none opacity-25">
+            <div class="absolute top-12 -left-24 w-96 h-96 rounded-full bg-biotech-600 blur-3xl"></div>
+            <div class="absolute bottom-12 -right-24 w-96 h-96 rounded-full bg-hemo-600 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Cabeçalho da Seção -->
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-biotech-400 bg-biotech-500/10 border border-biotech-500/25 px-4 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-biotech-400 animate-pulse"></span>
+                    Laboratório Virtual Interativo • 3D em Tempo Real
+                </span>
+                <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+                    Simulações 3D de Hemoterapia
+                </h2>
+                <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Interaja com nossos modelos 3D científicos: acompanhe a separação do sangue por centrifugação e visualize em escala molecular os efeitos positivos ou graves ao misturar diferentes tipos sanguíneos.
+                </p>
+            </div>
+
+            <!-- Fallback caso navegador não suporte WebGL -->
+            <div id="lab3d-webgl-fallback" class="hidden max-w-2xl mx-auto p-6 rounded-3xl bg-slate-800/90 border border-amber-400/40 text-center">
+                <p class="font-display font-bold text-lg text-amber-300">WebGL 3D indisponível neste dispositivo</p>
+                <p class="text-sm text-slate-300 mt-2">Seu navegador atual está com aceleração gráfica 3D desativada. Experimente abrir em uma versão recente do Chrome, Edge, Firefox ou Safari.</p>
+            </div>
+
+            <div id="lab3d-main-stage">
+                <!-- Seletor de Simulações (Extensível para futuras simulações 3D) -->
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+                    <button type="button" id="tab-btn-centrifuga" class="lab-tab-btn flex items-center gap-3 px-5 py-3.5 rounded-2xl border-2 border-biotech-500 bg-biotech-500/15 text-white shadow-glow-teal transition-all text-left cursor-pointer">
+                        <div class="w-10 h-10 rounded-xl bg-biotech-500/25 text-biotech-300 flex items-center justify-center text-xl shrink-0">
+                            🧪
+                        </div>
+                        <div>
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-biotech-300">Simulação 01</div>
+                            <div class="font-display font-extrabold text-sm sm:text-base leading-tight">Centrifugação do Sangue 3D</div>
+                        </div>
+                    </button>
+
+                    <button type="button" id="tab-btn-compatibilidade" class="lab-tab-btn flex items-center gap-3 px-5 py-3.5 rounded-2xl border-2 border-slate-700/80 bg-slate-800/60 text-slate-300 hover:border-slate-500 hover:text-white transition-all text-left cursor-pointer">
+                        <div class="w-10 h-10 rounded-xl bg-hemo-500/25 text-rose-300 flex items-center justify-center text-xl shrink-0">
+                            🩸
+                        </div>
+                        <div>
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-rose-300">Simulação 02</div>
+                            <div class="font-display font-extrabold text-sm sm:text-base leading-tight">Compatibilidade Sanguínea 3D</div>
+                        </div>
+                    </button>
+
+                    <div class="hidden md:flex items-center gap-2 px-4 py-3 rounded-2xl border border-dashed border-slate-700 bg-slate-900/40 text-slate-400 text-xs font-medium select-none" title="Espaço preparado para futuras simulações 3D do projeto">
+                        <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+                        <span>+ Novas simulações em breve</span>
+                    </div>
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- PAINEL 1: SIMULAÇÃO 3D DE CENTRIFUGAÇÃO DO SANGUE         -->
+                <!-- ========================================================= -->
+                <div id="panel-centrifuga" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <!-- Coluna Viewport 3D (7 cols) -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="relative h-[430px] sm:h-[510px] lg:h-[550px] rounded-3xl overflow-hidden border border-slate-700/80 bg-[#080d1a] shadow-2xl">
+                            <!-- Three.js Canvas Mount -->
+                            <div id="centrifuge-canvas-container" class="w-full h-full"></div>
+
+                            <!-- Floating 3D Layer Callout Pins -->
+                            <div id="centrifuge-pins" class="pointer-events-none absolute inset-0 overflow-hidden z-10"></div>
+
+                            <!-- HUD Superior: Telemetria + Modos de Câmera -->
+                            <div class="pointer-events-none absolute top-3.5 left-3.5 right-3.5 flex flex-wrap items-center justify-between gap-2 z-20">
+                                <div class="pointer-events-auto flex flex-wrap items-center gap-2 bg-slate-950/80 backdrop-blur-md border border-slate-700/80 px-3.5 py-2 rounded-2xl text-xs">
+                                    <span id="cent-hud-dot" class="w-2.5 h-2.5 rounded-full bg-biotech-400 animate-pulse"></span>
+                                    <span id="cent-hud-rpm" class="font-display font-extrabold text-white tabular-nums">0 RPM</span>
+                                    <span class="text-slate-600">•</span>
+                                    <span id="cent-hud-rcf" class="font-semibold text-sky-300 tabular-nums">0 × g</span>
+                                    <span class="hidden sm:inline text-slate-600">•</span>
+                                    <span class="hidden sm:inline font-semibold text-biotech-300">4°C</span>
+                                </div>
+
+                                <div class="pointer-events-auto flex items-center gap-1.5 bg-slate-950/80 backdrop-blur-md border border-slate-700/80 p-1 rounded-2xl text-[11px] font-bold">
+                                    <button type="button" id="btn-cent-view-machine" class="px-2.5 py-1.5 rounded-xl bg-biotech-600 text-white transition-colors cursor-pointer">Centrífuga</button>
+                                    <button type="button" id="btn-cent-view-tube" disabled class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 text-slate-300 opacity-40 cursor-not-allowed transition-colors">Tubo 3D</button>
+                                    <button type="button" id="btn-cent-explode" disabled class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 text-slate-200 opacity-40 cursor-not-allowed transition-colors">⊞ Expandir Camadas</button>
+                                </div>
+                            </div>
+
+                            <!-- HUD Inferior: Progresso + Controles de Zoom -->
+                            <div class="pointer-events-none absolute bottom-3.5 left-3.5 right-3.5 flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-2.5 z-20">
+                                <div class="flex-1 bg-slate-950/80 backdrop-blur-md border border-slate-700/80 rounded-2xl px-3.5 py-2.5">
+                                    <div class="flex items-center justify-between gap-2 text-[11px] mb-1.5">
+                                        <span id="cent-phase-text" class="text-slate-200 font-medium leading-tight">Aguardando início — Sangue total homogêneo nos tubos</span>
+                                        <span id="cent-progress-pct" class="font-display font-extrabold text-biotech-400 shrink-0 tabular-nums">0%</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                                        <div id="cent-progress-bar" class="h-full bg-gradient-to-r from-biotech-500 via-sky-400 to-emerald-400 transition-all duration-150 w-0"></div>
+                                    </div>
+                                </div>
+
+                                <div class="pointer-events-auto flex items-center justify-end gap-1.5 shrink-0">
+                                    <span class="hidden md:inline text-[10px] text-slate-400 bg-slate-950/70 px-2.5 py-1.5 rounded-xl border border-slate-800">Arraste p/ girar 3D</span>
+                                    <button type="button" id="cent-zoom-in" aria-label="Aproximar" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm flex items-center justify-center cursor-pointer">+</button>
+                                    <button type="button" id="cent-zoom-out" aria-label="Afastar" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm flex items-center justify-center cursor-pointer">−</button>
+                                    <button type="button" id="cent-zoom-reset" aria-label="Resetar câmera" title="Resetar câmera" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-xs flex items-center justify-center cursor-pointer">↺</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barra de Ações da Centrifugação -->
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button type="button" id="btn-cent-start" class="flex-1 min-w-[200px] px-5 py-3.5 rounded-2xl bg-gradient-to-r from-biotech-600 to-sky-600 hover:from-biotech-500 hover:to-sky-500 text-white font-display font-extrabold text-sm sm:text-base shadow-glow-teal transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                <span>▶ Iniciar Centrifugação</span>
+                            </button>
+                            <button type="button" id="btn-cent-fast" class="px-4 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-amber-300 font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                ⚡ Ir para Resultado Separado
+                            </button>
+                            <button type="button" id="btn-cent-reset" class="px-4 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                ↺ Reiniciar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Painel Científico & Detalhamento dos Componentes (5 cols) -->
+                    <div class="lg:col-span-5">
+                        <!-- Estado Pré-Centrifugação -->
+                        <div id="cent-pre-card" class="bg-slate-800/75 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-6 sm:p-7 space-y-5 shadow-2xl">
+                            <div>
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-biotech-500/15 text-biotech-300 border border-biotech-500/30">
+                                    Princípio Físico-Biotecnológico
+                                </span>
+                                <h3 class="font-display font-extrabold text-2xl text-white mt-3">
+                                    Como a Centrifugação Separa o Sangue?
+                                </h3>
+                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                                    Ao girar o sangue total em alta velocidade (<strong>3.500 RPM / ~2.000 × g</strong>) sob refrigeração (<strong>4°C</strong>), a <strong>força centrífuga</strong> separa cada componente de acordo com a sua <strong>densidade</strong>:
+                                </p>
+                            </div>
+
+                            <div class="space-y-2.5">
+                                <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/70 border border-slate-700/60">
+                                    <span class="w-3 h-8 rounded-full bg-amber-400 shrink-0"></span>
+                                    <div>
+                                        <div class="text-xs font-bold text-amber-300 uppercase">Topo • Plasma (~55%)</div>
+                                        <div class="text-xs text-slate-400">Menos denso — fração líquida rica em proteínas e fatores de coagulação.</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/70 border border-slate-700/60">
+                                    <span class="w-3 h-8 rounded-full bg-slate-100 shrink-0"></span>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-100 uppercase">Meio • Plaquetas & Leucócitos (&lt;1%)</div>
+                                        <div class="text-xs text-slate-400">Camada leucoplaquetária (Buffy Coat) — densidade intermediária.</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/70 border border-slate-700/60">
+                                    <span class="w-3 h-8 rounded-full bg-hemo-500 shrink-0"></span>
+                                    <div>
+                                        <div class="text-xs font-bold text-rose-300 uppercase">Fundo • Hemácias (~45%)</div>
+                                        <div class="text-xs text-slate-400">Mais densas — ricas em hemoglobina com ferro, sedimentam na base.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-biotech-500/10 border border-biotech-500/30 text-xs text-biotech-200 leading-relaxed">
+                                💡 <strong>Clique em "Iniciar Centrifugação"</strong> (ou em "Ir para Resultado Separado") para ver o tubo 3D estratificado em macro e desbloquear o guia interativo com a <strong>utilidade clínica de cada componente</strong>!
+                            </div>
+                        </div>
+
+                        <!-- Estado Pós-Centrifugação: Detalhamento Completo dos Componentes -->
+                        <div id="cent-results-panel" class="hidden bg-slate-800/80 backdrop-blur-xl border border-biotech-500/40 rounded-3xl p-5 sm:p-6 space-y-5 shadow-2xl">
+                            <div class="flex items-center justify-between gap-2">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">✅ Separação Concluída</span>
+                                    <h3 class="font-display font-extrabold text-xl text-white">Componentes & Utilidades</h3>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-xl bg-hemo-600/20 border border-hemo-500/40 text-rose-200 text-[11px] font-bold shrink-0">
+                                    1 bolsa = até 4 vidas
+                                </span>
+                            </div>
+
+                            <!-- 4 Botões de Inspeção dos Componentes -->
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" data-layer="plasma" class="cent-layer-btn p-2.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 hover:border-amber-400/70 text-left transition-all cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shrink-0"></span>
+                                        <span class="font-display font-bold text-xs text-white">Plasma</span>
+                                    </div>
+                                    <span class="text-[10px] text-amber-300 font-semibold block mt-0.5">Topo • ~55%</span>
+                                </button>
+
+                                <button type="button" data-layer="buffy" class="cent-layer-btn p-2.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 hover:border-slate-300/70 text-left transition-all cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-slate-100 shrink-0"></span>
+                                        <span class="font-display font-bold text-xs text-white">Plaquetas / WBC</span>
+                                    </div>
+                                    <span class="text-[10px] text-slate-300 font-semibold block mt-0.5">Buffy Coat • &lt;1%</span>
+                                </button>
+
+                                <button type="button" data-layer="hemacias" class="cent-layer-btn p-2.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 hover:border-hemo-500/70 text-left transition-all cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-hemo-500 shrink-0"></span>
+                                        <span class="font-display font-bold text-xs text-white">Hemácias</span>
+                                    </div>
+                                    <span class="text-[10px] text-rose-300 font-semibold block mt-0.5">Fundo • ~45%</span>
+                                </button>
+
+                                <button type="button" data-layer="crio" class="cent-layer-btn p-2.5 rounded-2xl bg-slate-900/70 border border-slate-700/80 hover:border-biotech-400/70 text-left transition-all cursor-pointer">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-biotech-400 shrink-0"></span>
+                                        <span class="font-display font-bold text-xs text-white">Crioprecipitado</span>
+                                    </div>
+                                    <span class="text-[10px] text-biotech-300 font-semibold block mt-0.5">Derivado do Plasma</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Dinâmico de Detalhamento do Componente Selecionado -->
+                            <div id="cent-layer-detail"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================= -->
+                <!-- PAINEL 2: SIMULAÇÃO 3D DE COMPATIBILIDADE SANGUÍNEA       -->
+                <!-- ========================================================= -->
+                <div id="panel-compatibilidade" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <!-- Coluna Viewport 3D (7 cols) -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="relative h-[430px] sm:h-[510px] lg:h-[550px] rounded-3xl overflow-hidden border border-slate-700/80 bg-[#080b14] shadow-2xl">
+                            <!-- Three.js Canvas Mount -->
+                            <div id="compat-canvas-container" class="w-full h-full"></div>
+
+                            <!-- Floating 3D Molecular Callouts -->
+                            <div id="compat-pins" class="pointer-events-none absolute inset-0 overflow-hidden z-10"></div>
+
+                            <!-- HUD Superior: Par Selecionado + Câmera -->
+                            <div class="pointer-events-none absolute top-3.5 left-3.5 right-3.5 flex flex-wrap items-center justify-between gap-2 z-20">
+                                <div class="pointer-events-auto flex flex-wrap items-center gap-2.5 bg-slate-950/85 backdrop-blur-md border border-slate-700/80 px-3.5 py-2 rounded-2xl text-xs">
+                                    <span id="compat-hud-match" class="font-display font-extrabold">Doador A+ ➔ Receptor B+</span>
+                                    <span id="compat-hud-status" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-600">Pronto</span>
+                                </div>
+
+                                <div class="pointer-events-auto flex items-center gap-1.5 bg-slate-950/85 backdrop-blur-md border border-slate-700/80 p-1 rounded-2xl text-[11px] font-bold">
+                                    <button type="button" id="btn-compat-view-overview" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 transition-colors cursor-pointer">Visão Geral</button>
+                                    <button type="button" id="btn-compat-view-macro" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 transition-colors cursor-pointer">Zoom Célula</button>
+                                    <button type="button" id="btn-compat-labels" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-biotech-300 transition-colors cursor-pointer">🏷️ Rótulos: ON</button>
+                                </div>
+                            </div>
+
+                            <!-- HUD Inferior: Narração Molecular + Legenda + Zoom -->
+                            <div class="pointer-events-none absolute bottom-3.5 left-3.5 right-3.5 flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-2.5 z-20">
+                                <div class="flex-1 bg-slate-950/85 backdrop-blur-md border border-slate-700/80 rounded-2xl px-3.5 py-2.5 space-y-1.5">
+                                    <div id="compat-stage-text" class="text-[11px] sm:text-xs text-slate-100 font-medium leading-snug">
+                                        Pronto para misturar...
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+                                        <span class="inline-flex items-center gap-1"><span class="text-sky-400 font-bold">▲</span> Antígeno A / Anti-A</span>
+                                        <span class="inline-flex items-center gap-1"><span class="text-amber-400 font-bold">●</span> Antígeno B / Anti-B</span>
+                                        <span class="inline-flex items-center gap-1"><span class="text-fuchsia-400 font-bold">◆</span> Fator Rh (D) / Anti-Rh</span>
+                                        <span class="inline-flex items-center gap-1"><span class="text-white font-bold">Y</span> Anticorpo</span>
+                                    </div>
+                                </div>
+
+                                <div class="pointer-events-auto flex items-center justify-end gap-1.5 shrink-0">
+                                    <button type="button" id="compat-zoom-in" aria-label="Aproximar" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm flex items-center justify-center cursor-pointer">+</button>
+                                    <button type="button" id="compat-zoom-out" aria-label="Afastar" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm flex items-center justify-center cursor-pointer">−</button>
+                                    <button type="button" id="compat-zoom-reset" aria-label="Resetar câmera" title="Resetar câmera" class="w-8 h-8 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-xs flex items-center justify-center cursor-pointer">↺</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Atalhos de Exemplos Rápidos para Apresentação -->
+                        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-3.5">
+                            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">⚡ Testes Rápidos (Clique para simular na hora):</div>
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" data-donor="O-" data-recipient="A+" class="compat-preset-btn px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-200 text-xs font-bold transition-colors cursor-pointer">
+                                    🟢 O- ➔ A+ (Doador Universal)
+                                </button>
+                                <button type="button" data-donor="B+" data-recipient="AB+" class="compat-preset-btn px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-200 text-xs font-bold transition-colors cursor-pointer">
+                                    🟢 B+ ➔ AB+ (Receptor Universal)
+                                </button>
+                                <button type="button" data-donor="A+" data-recipient="B+" class="compat-preset-btn px-3 py-1.5 rounded-xl bg-hemo-600/20 hover:bg-hemo-600/35 border border-hemo-500/45 text-rose-200 text-xs font-bold transition-colors cursor-pointer">
+                                    🔴 A+ ➔ B+ (Erro ABO: Aglutinação!)
+                                </button>
+                                <button type="button" data-donor="O+" data-recipient="O-" class="compat-preset-btn px-3 py-1.5 rounded-xl bg-fuchsia-600/20 hover:bg-fuchsia-600/35 border border-fuchsia-500/45 text-fuchsia-200 text-xs font-bold transition-colors cursor-pointer">
+                                    🔴 O+ ➔ O- (Incompatibilidade Rh!)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Controles & Resultado Científico (5 cols) -->
+                    <div class="lg:col-span-5 bg-slate-800/80 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-5 sm:p-6 space-y-5 shadow-2xl">
+                        <!-- Seletor 1: DOADOR -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-xs font-extrabold uppercase tracking-wider text-rose-300">1. Sangue do DOADOR (Hemácias)</label>
+                                <span class="text-[10px] text-slate-400">Carrega os antígenos</span>
+                            </div>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button type="button" data-blood="O-" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">O-</button>
+                                <button type="button" data-blood="O+" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">O+</button>
+                                <button type="button" data-blood="A-" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">A-</button>
+                                <button type="button" data-blood="A+" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">A+</button>
+                                <button type="button" data-blood="B-" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">B-</button>
+                                <button type="button" data-blood="B+" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">B+</button>
+                                <button type="button" data-blood="AB-" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">AB-</button>
+                                <button type="button" data-blood="AB+" class="compat-donor-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">AB+</button>
+                            </div>
+                            <div id="compat-donor-chips" class="flex flex-wrap gap-1.5 mt-2.5"></div>
+                        </div>
+
+                        <!-- Seletor 2: RECEPTOR -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-xs font-extrabold uppercase tracking-wider text-sky-300">2. Sangue do RECEPTOR (Paciente)</label>
+                                <span class="text-[10px] text-slate-400">Anticorpos no plasma</span>
+                            </div>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button type="button" data-blood="O-" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">O-</button>
+                                <button type="button" data-blood="O+" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">O+</button>
+                                <button type="button" data-blood="A-" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">A-</button>
+                                <button type="button" data-blood="A+" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">A+</button>
+                                <button type="button" data-blood="B-" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">B-</button>
+                                <button type="button" data-blood="B+" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">B+</button>
+                                <button type="button" data-blood="AB-" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">AB-</button>
+                                <button type="button" data-blood="AB+" class="compat-recipient-btn py-2 rounded-xl font-display font-bold text-xs sm:text-sm border border-slate-700 bg-slate-900/80 text-slate-300">AB+</button>
+                            </div>
+                            <div id="compat-recipient-chips" class="flex flex-wrap gap-1.5 mt-2.5"></div>
+                        </div>
+
+                        <!-- Botões Principais de Mistura -->
+                        <div class="flex items-center gap-2.5">
+                            <button type="button" id="btn-compat-mix" class="flex-1 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-hemo-600 to-rose-500 hover:from-hemo-500 hover:to-rose-400 text-white font-display font-extrabold text-sm sm:text-base shadow-glow-red transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                <span>🧪 Misturar Sangues em 3D</span>
+                            </button>
+                            <button type="button" id="btn-compat-reset" class="px-4 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 font-display font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                                ↺
+                            </button>
+                        </div>
+
+                        <!-- Card Dinâmico do Resultado Clínico (Bom vs Ruim) -->
+                        <div id="compat-result-box" class="p-4 rounded-2xl bg-slate-900/80 border border-slate-700/80 transition-all"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1000,6 +1368,16 @@
                         <!-- Preenchido via JS -->
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
+                <p class="text-xs text-slate-500">
+                    Quer ver o que acontece nas células ao misturar esse tipo com outro?
+                </p>
+                <button type="button" onclick="window.openLab3D && window.openLab3D('compatibilidade', { donor: document.getElementById('selected-blood-donate').textContent, recipient: 'B+', autoStart: false })" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-science-900 hover:bg-hemo-600 text-white text-xs font-display font-bold transition-colors shadow-sm cursor-pointer">
+                    <span>🧪 Simular Mistura em 3D</span>
+                    <span>➔</span>
+                </button>
             </div>
         </div>
 
@@ -1435,5 +1813,12 @@
         // Inicializar com O- selecionado
         selectBloodType('O-');
     </script>
+
+    <!-- Three.js (r147 UMD — compatível com GitHub Pages e abertura local) & Simulações 3D -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+    <script src="js/sim-utils.js"></script>
+    <script src="js/sim-centrifuge.js"></script>
+    <script src="js/sim-compatibility.js"></script>
+    <script src="js/sim-controller.js"></script>
 </body>
 </html>
